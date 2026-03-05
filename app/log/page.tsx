@@ -67,7 +67,8 @@ export default function LogPage() {
     return (
       <div className="min-h-screen">
         <Navbar />
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="page-content min-h-[calc(100vh-70px)]">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Card>
             <CardContent className="p-8 text-center">
               <p className="text-slate-600 mb-4">
@@ -78,6 +79,7 @@ export default function LogPage() {
               </Button>
             </CardContent>
           </Card>
+          </div>
         </div>
       </div>
     );
@@ -86,8 +88,9 @@ export default function LogPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-white">Log Learning</h1>
+      <div className="page-content min-h-[calc(100vh-70px)]">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 className="text-3xl font-bold mb-8 text-black">Log Learning</h1>
 
         <Card>
           <CardHeader>
@@ -192,6 +195,7 @@ export default function LogPage() {
             </form>
           </CardContent>
         </Card>
+        </div>
       </div>
     </div>
   );

@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
+import { SkillStackLogo } from "@/components/SkillStackLogo";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -65,7 +65,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="flex items-center justify-center mb-8">
           <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full">
-            <BookOpen className="h-10 w-10 text-white" />
+            <SkillStackLogo className="text-white" size={40} />
           </div>
           <span className="ml-3 text-3xl font-bold text-white">SkillStack</span>
         </div>

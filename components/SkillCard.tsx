@@ -1,6 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { Edit, Trash2 } from "lucide-react";
+import { Edit, Trash2, Palette, Code, Briefcase, MoreHorizontal } from "lucide-react";
 import { minutesToHours } from "@/lib/utils";
 
 interface SkillCardProps {
@@ -30,11 +30,19 @@ const statusLabels: Record<string, string> = {
   proficient: "Proficient",
 };
 
+const categoryIcons: Record<string, any> = {
+  design: Palette,
+  development: Code,
+  product: Briefcase,
+  other: MoreHorizontal,
+};
+
 export function SkillCard({ skill, onEdit, onDelete }: SkillCardProps) {
   const totalHours = minutesToHours(skill.totalMinutes);
   const progress = skill.targetHours
     ? Math.min((totalHours / skill.targetHours) * 100, 100)
     : 0;
+  const Icon = categoryIcons[skill.category] || MoreHorizontal;
 
   return (
     <Card>
@@ -42,9 +50,11 @@ export function SkillCard({ skill, onEdit, onDelete }: SkillCardProps) {
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
             <div
-              className="h-10 w-10 rounded-lg"
+              className="h-10 w-10 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: skill.color }}
-            />
+            >
+              <Icon className="h-5 w-5 text-white" />
+            </div>
             <div>
               <h3 className="font-semibold text-lg">{skill.name}</h3>
               <span className="text-xs text-slate-600 bg-slate-100 px-2 py-1 rounded">

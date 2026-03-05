@@ -44,10 +44,12 @@ export default function ProgressPage() {
     return (
       <div className="min-h-screen">
         <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="animate-pulse space-y-6">
-            <div className="h-96 bg-slate-200 rounded-lg" />
-            <div className="h-96 bg-slate-200 rounded-lg" />
+        <div className="page-content min-h-[calc(100vh-70px)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="animate-pulse space-y-6">
+              <div className="h-96 bg-slate-200 rounded-lg" />
+              <div className="h-96 bg-slate-200 rounded-lg" />
+            </div>
           </div>
         </div>
       </div>
@@ -70,7 +72,8 @@ export default function ProgressPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="page-content min-h-[calc(100vh-70px)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-white">Progress</h1>
           <div className="w-48">
@@ -202,6 +205,7 @@ export default function ProgressPage() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
     </div>
   );

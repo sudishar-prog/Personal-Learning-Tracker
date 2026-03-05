@@ -117,11 +117,13 @@ export default function SkillsPage() {
     return (
       <div className="min-h-screen">
         <Navbar />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="animate-pulse grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-64 bg-slate-200 rounded-lg" />
-            ))}
+        <div className="page-content min-h-[calc(100vh-70px)]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="animate-pulse grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-64 bg-slate-200 rounded-lg" />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -131,10 +133,11 @@ export default function SkillsPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="page-content min-h-[calc(100vh-70px)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-white">Skills</h1>
-          <Button onClick={() => { resetForm(); setDialogOpen(true); }} className="bg-white text-blue-600 hover:bg-white/90">
+          <Button onClick={() => { resetForm(); setDialogOpen(true); }} className="text-white hover:bg-white/10">
             <Plus className="h-4 w-4 mr-2" />
             Add Skill
           </Button>
@@ -263,6 +266,7 @@ export default function SkillsPage() {
           description="This will permanently delete this skill and all associated log entries. This action cannot be undone."
           onConfirm={handleDelete}
         />
+        </div>
       </div>
     </div>
   );

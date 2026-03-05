@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
-import { BookOpen, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { SkillStackLogo } from "./SkillStackLogo";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard" },
@@ -19,12 +20,12 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="border-b border-white/20 bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="border-b border-white/20 bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg opacity-100" style={{ height: '70px' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex justify-between h-full items-center">
           <div className="flex">
             <Link href="/dashboard" className="flex items-center">
-              <BookOpen className="h-6 w-6 text-white" />
+              <SkillStackLogo className="text-white" size={28} />
               <span className="ml-2 text-xl font-semibold text-white">SkillStack</span>
             </Link>
             <div className="hidden sm:ml-8 sm:flex sm:space-x-4">
@@ -33,7 +34,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                    "inline-flex items-center px-3 py-1 text-sm font-medium rounded-md transition-colors",
                     pathname === item.href
                       ? "bg-white/20 text-white"
                       : "text-white/80 hover:text-white hover:bg-white/10"
@@ -50,6 +51,7 @@ export function Navbar() {
               size="sm"
               onClick={() => signOut({ callbackUrl: "/login" })}
               className="text-white hover:bg-white/10"
+              style={{ height: '50px' }}
             >
               <LogOut className="h-4 w-4 mr-2" />
               Sign Out
