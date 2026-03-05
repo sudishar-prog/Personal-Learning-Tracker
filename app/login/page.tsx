@@ -70,15 +70,15 @@ export default function LoginPage() {
           <span className="ml-3 text-3xl font-bold text-white">SkillStack</span>
         </div>
 
-        <Card className="shadow-2xl border-white/20">
+        <Card className="shadow-2xl border-white/20 bg-white/95 backdrop-blur-sm">
           <CardHeader>
-            <CardTitle className="text-center">{isSignUp ? "Create Account" : "Sign In"}</CardTitle>
+            <CardTitle className="text-center text-gray-900">{isSignUp ? "Create Account" : "Sign In"}</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               {isSignUp && (
                 <div>
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name" className="text-gray-900">Name</Label>
                   <Input
                     id="name"
                     type="text"
@@ -93,7 +93,7 @@ export default function LoginPage() {
               )}
 
               <div>
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-gray-900">Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -107,7 +107,7 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password" className="text-gray-900">Password</Label>
                 <Input
                   id="password"
                   type="password"
@@ -129,7 +129,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setIsSignUp(!isSignUp)}
-                className="text-sm text-slate-600 hover:text-slate-900"
+                className="text-sm text-white hover:text-white/80"
               >
                 {isSignUp
                   ? "Already have an account? Sign in"
